@@ -1,9 +1,9 @@
 """
 In this program I want to simulate a simple game which already exists in real life.
-In this game you usally have two pig figurines which you throw and depending on the way they land you get points.
+In this game you usally have two figurines which you throw and depending on the way they land you get points.
 After each throw one can decide if to throw again or to pass, as long as the previous throw wasn't the one throw which let's you lose the game.
-Because I wasn't able to make pigs in ascii code, there will the mice instead.
-The possible throws for one mice are:
+The different results will be represented by ASCII-mice.
+The possible throws for one mouse are:
 looking left, looking right, laying on its back (laying), only showing the bum (bum), sitting and showing the face upfront (face).
 The rules are as follows:
 You always lose all your gathered points if one mouse is looking left while the other one is looking right, as well as the other way around.
@@ -46,13 +46,13 @@ In all the other cases the points of the mice are looked at and added individual
  ^---^`-._
 
 
-This game is some kind of a simple gamble game and the goal is to get as most points as possible.
+This game is some kind of a simple gamble game and the goal is to get as many points as possible.
 """
 
 from numpy.random import choice
 
 '''
-the following lines are ascii pictures of mice
+the following lines are the ascii pictures of the mice
 '''
 
 LookingLeft = '\n  _  _\n (o)(o)--.\n  \../ (  )____/\n  m\/m--m`\n'
@@ -136,7 +136,7 @@ while answer != 'yes' and answer != 'no':  # I want the user to not just write g
 if answer == 'yes':
     user_points = 0  # at first the player obviously got no points
     fail = 0  # the player obviously hasn't lost yet
-    rolling = checking(user_points)  # the function checking is being run
+    rolling = checking(user_points)  # the function "checking" is being run
     user_points += rolling[0]  # the gained points are being added to the player points
     end = rolling[1]  # this line is to check later if the player has lost
     spawnkill = 0  # it is possible to throw 0 points in the first round. Of course that doesn't mean that the player lost so this line is to make sure that the player isn't being spawnkilled out of bad luck
